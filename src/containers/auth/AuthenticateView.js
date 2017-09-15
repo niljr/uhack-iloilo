@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
   logo: {
     width: AppSizes.screen.width * 0.95,
     alignSelf: 'center',
-    height: 300
+    height: AppSizes.screen.height * 0.5,
+    marginTop: AppSizes.screen.height * 0.15
   },
   textLogo: {
     alignItems: 'center',
@@ -41,8 +42,8 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     textAlign: 'center',
     lineHeight: 28,
-    fontSize: 15
-
+    fontSize: 15,
+    backgroundColor: 'transparent'
   },
   whiteText: {
     color: '#FFF',
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height:null,
     width:null,
+    alignItems: 'center'
   },
   overlay: {
     position: 'absolute',
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#36BA8A',
     borderRadius:25,
-    width: 150,
+    width: AppSizes.screen.width * 0.43,
     height: 38,
   },
   signInText: {
@@ -78,13 +80,20 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     borderWidth: 1,
     borderColor: '#36BA8A',
-    width: 150,
+    width: AppSizes.screen.width * 0.43,
     height: 38,
+    backgroundColor: 'transparent'    
   },
   signUpText: {
     color: '#36BA8A',
+  },
+  buttonContainer: {
+    flexDirection: 'row'
+  },
+  button: {
+    flex: 1,
+    alignItems: 'center'
   }
-  
 });
 
 /* Component ==================================================================== */
@@ -92,42 +101,24 @@ class Authenticate extends Component {
   static componentName = 'Authenticate';
   
   render = () => (
-    // <View style={[AppStyles.containerCentered, AppStyles.container, styles.background]}>
     <Image source={require('../../images/backgroundImage3.jpg')} style={styles.backgroundImage}>
-      <View style={styles.overLay} />
-
-      <Spacer size={60} />
-      
-      <Image
-        source={require('../../images/logoGreen.png')}
-        style={[styles.logo]}
-      />
-
-
-      <View>
+      <View style={{height: AppSizes.screen.height * 0.9}}>
+        <Image
+          source={require('../../images/logoGreen.png')}
+          style={[styles.logo]}
+        />
         <Text style={styles.textLogo}>For all the moments between eating and sleeping! Rent that toy without burning a hole in your pocket.</Text>
       </View>
-
-      <Spacer size={100} />
       
-      <View style={[AppStyles.row, AppStyles.paddingHorizontal]}>
-        <View style={[AppStyles.flex1]}>
+      <View style={styles.buttonContainer}>
+        <View style={styles.button}>
           <TouchableOpacity style={styles.signIn} onPress={Actions.login}>
             <Text style={styles.signInText}>SIGN IN</Text>
           </TouchableOpacity>
         </View>
 
-      <Spacer size={10} />
 
-        <View style={[AppStyles.flex1]}>
-          {/* <Button
-            title={'SIGN UP'}
-            containerViewStyle={{borderRadius:25}}
-            buttonStyle={{ borderWidth: 1, borderColor: 'white'}}
-            color={'white'}
-            onPress={Actions.signUp}
-            backgroundColor={'rgba(255,255,255,0.2)'}
-          /> */}
+        <View style={styles.button}>
           <TouchableOpacity style={styles.signUp} onPress={Actions.signUp}>
             <Text style={styles.signUpText}>SIGN UP</Text>
           </TouchableOpacity>
@@ -136,30 +127,7 @@ class Authenticate extends Component {
 
       <Spacer size={10} />
 
-      {/* <Text p style={[AppStyles.textCenterAligned, styles.whiteText]}>
-        - or -
-      </Text>
-
-      <Spacer size={10} />
-
-      <View style={[AppStyles.row, AppStyles.paddingHorizontal]}>
-        <View style={[AppStyles.flex1]} />
-        <View style={[AppStyles.flex2]}>
-          <Button
-            small
-            title={'Skip'}
-            onPress={Actions.app}
-            raised={false}
-            backgroundColor={'rgba(255,255,255,0.2)'}
-          />
-        </View>
-        <View style={[AppStyles.flex1]} />
-      </View>
-
-      <Spacer size={40} /> */}
-      </Image>
-
-    // </View>
+    </Image>
   )
 }
 
