@@ -13,13 +13,13 @@ const app = {
 
 const brand = {
   brand: {
-    primary: '#0E4EF8',
+    primary: '#36BA8A',
     secondary: '#17233D',
   },
 };
 
 const text = {
-  textPrimary: '#222222',
+  textPrimary: '#8C99A3',
   textSecondary: '#777777',
   headingPrimary: brand.brand.primary,
   headingSecondary: brand.brand.primary,
