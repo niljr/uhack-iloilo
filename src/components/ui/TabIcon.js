@@ -8,7 +8,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { AppColors } from '@theme/';
 

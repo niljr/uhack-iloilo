@@ -2,10 +2,10 @@
 export const initialState = {
   currentAgeBracket: null,
   ageBracket: [
-    { ageCode: 1, label: 'Baby: 0-12 mos.', image: 'http://images.mattel.com/scene7//wcsstore/MattelCAS/FDF21_01?storeId=10151&SKU=FDF21' },
-    { ageCode: 2, label: 'Toddler: 1-3 yrs.', image: 'https://heavyeditorial.files.wordpress.com/2015/09/toddler-toys-1.jpg?quality=65&strip=all&strip=all'},
-    { ageCode: 3, label: 'Preschool: 3-5 yrs.', image: 'https://www.notimeforflashcards.com/wp-content/uploads/2015/11/preschool-toys-3.jpg' },
-    { ageCode: 4, label: 'Gradeschooler: 5-12 yrs.', image: 'https://s-media-cache-ak0.pinimg.com/236x/39/78/4d/39784d2b2fb4752a78002a201fb69aa7.jpg' }
+    { ageCode: 1, label: 'Baby', age: '0-12 mos.', image: 'http://www.bridgenorena.com/wordpress/wp-content/uploads/2011/03/slider1.jpg' },
+    { ageCode: 2, label: 'Toddler', age: '1-3 yrs.', image: 'http://funderstanding.com/wp-content/uploads/2011/04/child-and-playdough1.jpg'},
+    { ageCode: 3, label: 'Preschool', age: '3-5 yrs.', image: 'https://2hy93b3y7wpb45rh9i135ueo-wpengine.netdna-ssl.com/wp-content/uploads/121029593-Playing-with-toys.jpg' },
+    { ageCode: 4, label: 'Gradeschooler', age: '5-12 yrs.', image: 'http://images.parents.mdpcdn.com/sites/parents.com/files/images/550_101566746.jpg' }
   ]
 };
 
