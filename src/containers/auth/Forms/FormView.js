@@ -18,6 +18,7 @@ import { Actions } from 'react-native-router-flux';
 // Consts and Libs
 import { AppStyles } from '@theme/';
 
+
 // Components
 import { Alerts, Card, Spacer, Text, Button } from '@ui/';
 import TcombTextInput from '@components/tcomb/TextInput';
@@ -30,8 +31,8 @@ class AuthForm extends Component {
   static propTypes = {
     user: PropTypes.shape({
       email: PropTypes.string,
-      firstName: PropTypes.string,
-      lastName: PropTypes.string,
+      name: PropTypes.string,
+      address: PropTypes.string,
     }),
     submit: PropTypes.func,
     onSuccessfulSubmit: PropTypes.func,
@@ -63,8 +64,8 @@ class AuthForm extends Component {
     if (props.formFields.indexOf('Email') > -1) formFields.Email = this.validEmail;
     if (props.formFields.indexOf('Password') > -1) formFields.Password = this.validPassword;
     if (props.formFields.indexOf('ConfirmPassword') > -1) formFields.ConfirmPassword = this.validPassword;
-    if (props.formFields.indexOf('FirstName') > -1) formFields.FirstName = FormValidation.String;
-    if (props.formFields.indexOf('LastName') > -1) formFields.LastName = FormValidation.String;
+    if (props.formFields.indexOf('Name') > -1) formFields.Name = FormValidation.String;
+    if (props.formFields.indexOf('Address') > -1) formFields.Address = FormValidation.String;
 
     this.state = {
       resultMsg: {
@@ -75,8 +76,8 @@ class AuthForm extends Component {
       form_fields: FormValidation.struct(formFields),
       form_values: {
         Email: (props.user && props.user.email) ? props.user.email : '',
-        FirstName: (props.user && props.user.firstName) ? props.user.firstName : '',
-        LastName: (props.user && props.user.lastName) ? props.user.lastName : '',
+        Name: (props.user && props.user.name) ? props.user.name : '',
+        Address: (props.user && props.user.Address) ? props.user.Address : '',
       },
       options: {
         fields: {
@@ -98,14 +99,14 @@ class AuthForm extends Component {
             clearButtonMode: 'while-editing',
             secureTextEntry: true,
           },
-          FirstName: {
+          Name: {
             template: TcombTextInput,
-            error: 'Please enter your first name',
+            error: 'Please enter your name',
             clearButtonMode: 'while-editing',
           },
-          LastName: {
+          Address: {
             template: TcombTextInput,
-            error: 'Please enter your first name',
+            error: 'Please enter your address',
             clearButtonMode: 'while-editing',
           },
         },
