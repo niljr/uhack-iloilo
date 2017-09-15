@@ -5,15 +5,11 @@ import styles from './styles';
 
 class AgeBracket extends Component {
   render() {
-    const { age } = this.props;
+    const { toyItem } = this.props;
     return(
       <TouchableOpacity style={styles.container} onPress={this.onPress}>
-        <Image source={require('../../../images/baby.jpg')} style={styles.image}>
-          <View style={styles.overlay}>
-            <Text style={styles.label}>{age.label.toUpperCase()}</Text>
-            <Text style={styles.age}>{age.age}</Text>
-          </View>
-        </Image>
+        <Image source={{ uri: toyItem.image }} style={styles.image} />
+        <Text style={styles.label}>{toyItem.name.toUpperCase()}</Text>
       </TouchableOpacity>
     );
   }

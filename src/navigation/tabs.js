@@ -16,11 +16,8 @@ import { TabIcon } from '@ui/';
 import { NavbarMenuButton } from '@containers/ui/NavbarMenuButton/NavbarMenuButtonContainer';
 
 // Scenes
-import Placeholder from '@components/general/Placeholder';
-import Error from '@components/general/Error';
-import StyleGuide from '@containers/StyleGuideView';
-import Recipes from '@containers/recipes/Browse/BrowseContainer';
-import RecipeView from '@containers/recipes/RecipeView';
+import Toys from '@containers/toys/ToysView';
+import Box from '@containers/box/BoxView';
 
 const navbarPropsTabs = {
   ...AppConfig.navbarProps,
@@ -39,21 +36,21 @@ const scenes = (
     pressOpacity={0.95}
   >
     <Scene
-      key={'timeline'}
+      key={'toys'}
       {...navbarPropsTabs}
-      title={'Coming Soon'}
-      component={Placeholder}
-      icon={props => TabIcon({ ...props, icon: 'timeline' })}
-      analyticsDesc={'Placeholder: Coming Soon'}
+      title={'You choose'}
+      component={Toys}
+      icon={props => TabIcon({ ...props, icon: 'ios-jet' })}
+      analyticsDesc={'You choose'}
     />
 
     <Scene
-      key={'error'}
+      key={'package'}
       {...navbarPropsTabs}
-      title={'Example Error'}
-      component={Error}
-      icon={props => TabIcon({ ...props, icon: 'error' })}
-      analyticsDesc={'Error: Example Error'}
+      title={'Package'}
+      component={Box}
+      icon={props => TabIcon({ ...props, icon: 'ios-cube' })}
+      analyticsDesc={'Package'}
     />
   </Scene>
 );

@@ -51,7 +51,7 @@ export default Actions.create(
             renderLeftButton={() => <NavbarMenuButton />}
             renderRightButton={() => (
               <Icon 
-                name={'ios-cart'} 
+                name={'md-basket'} 
                 size={30} 
                 color={AppColors.brand.primary} 
                 style={[...AppStyles.containerCentered,{ top: -2 }]}
