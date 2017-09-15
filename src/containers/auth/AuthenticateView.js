@@ -64,25 +64,25 @@ const styles = StyleSheet.create({
   signIn: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#36BA8A',
     borderRadius:25,
     width: 150,
     height: 38,
   },
   signInText: {
-    color: '#36BA8A',
+    color: '#FFFFFF',
   },
   signUp: {
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 25,
     borderWidth: 1,
-    borderColor: '#FFFFFF',
+    borderColor: '#36BA8A',
     width: 150,
     height: 38,
   },
   signUpText: {
-    color: '#FFFFFF',
+    color: '#36BA8A',
   }
   
 });
@@ -93,13 +93,13 @@ class Authenticate extends Component {
   
   render = () => (
     // <View style={[AppStyles.containerCentered, AppStyles.container, styles.background]}>
-    <Image source={require('../../images/backgroundImage2.jpg')} style={styles.backgroundImage}>
+    <Image source={require('../../images/backgroundImage3.jpg')} style={styles.backgroundImage}>
       <View style={styles.overLay} />
 
       <Spacer size={60} />
       
       <Image
-        source={require('../../images/logoWhite.png')}
+        source={require('../../images/logoGreen.png')}
         style={[styles.logo]}
       />
 
@@ -108,7 +108,7 @@ class Authenticate extends Component {
         <Text style={styles.textLogo}>For all the moments between eating and sleeping! Rent that toy without burning a hole in your pocket.</Text>
       </View>
 
-      <Spacer size={110} />
+      <Spacer size={100} />
       
       <View style={[AppStyles.row, AppStyles.paddingHorizontal]}>
         <View style={[AppStyles.flex1]}>
