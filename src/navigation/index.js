@@ -9,13 +9,17 @@ import { Actions, Scene, ActionConst } from 'react-native-router-flux';
 
 // Consts and Libs
 import { AppConfig } from '@constants/';
+import { AppColors, AppStyles } from '@theme/';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // Components
 import Drawer from '@containers/ui/DrawerContainer';
+import { NavbarMenuButton } from '@containers/ui/NavbarMenuButton/NavbarMenuButtonContainer';
 
 // Scenes
 import AppLaunch from '@containers/Launch/LaunchContainer';
 import Placeholder from '@components/general/Placeholder';
+import Landing from '@containers/landing/LandingView';
 import AuthScenes from './auth';
 import TabsScenes from './tabs';
 
@@ -35,19 +39,29 @@ export default Actions.create(
     {/* Main App */}
     <Scene key={'app'} {...AppConfig.navbarProps} title={AppConfig.appName} hideNavBar={false} type={ActionConst.RESET}>
       {/* Drawer Side Menu */}
-      <Scene key={'home'} component={Drawer} initial={'tabBar'}>
-        {/* Tabbar */}
-        {TabsScenes}
+      <Scene key={'home'} component={Drawer}>
+        {/* Content */}
+        <Scene key={'drawerWrapper'} >
+          <Scene
+            key={'landing'}
+            {...AppConfig.navbarProps}
+            title={''}
+            component={Landing}
+            analyticsDesc={'Placeholder: Coming Soon'}
+            renderLeftButton={() => <NavbarMenuButton />}
+            renderRightButton={() => (
+              <Icon 
+                name={'ios-cart'} 
+                size={30} 
+                color={AppColors.brand.primary} 
+                style={[...AppStyles.containerCentered,{ top: -2 }]}
+              />
+            )}         
+            initial   
+          />
+          {TabsScenes}
+        </Scene>
       </Scene>
-
-      {/* General */}
-      <Scene
-        clone
-        key={'comingSoon'}
-        title={'Coming Soon'}
-        component={Placeholder}
-        analyticsDesc={'Placeholder: Coming Soon'}
-      />
     </Scene>
   </Scene>,
 );

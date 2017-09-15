@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+import { AppColors } from '@theme/';
+
 /* Component ==================================================================== */
 const NavbarMenuButton = ({ toggleSideMenu, user }) => (
   <TouchableOpacity
@@ -17,7 +19,7 @@ const NavbarMenuButton = ({ toggleSideMenu, user }) => (
     style={{ top: -2 }}
     hitSlop={{ top: 7, right: 7, bottom: 7, left: 7 }}
   >
-    <Icon name={(user && user.email) ? 'ios-contact' : 'ios-contact-outline'} size={30} color={'#FFF'} />
+    <Icon name={'ios-menu'} size={30} color={AppColors.brand.primary} />
   </TouchableOpacity>
 );
 

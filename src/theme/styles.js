@@ -222,17 +222,17 @@ export default {
 
   // Navbar
   navbar: {
-    backgroundColor: Colors.brand.primary,
+    backgroundColor: Colors.brand.secondary,
     borderBottomWidth: 0,
   },
   navbarTitle: {
-    color: '#ffffff',
+    color: Colors.brand.primary,
     fontWeight: 'bold',
     fontFamily: Fonts.base.family,
     fontSize: Fonts.base.size,
   },
   navbarButton: {
-    tintColor: '#ffffff',
+    tintColor: Colors.brand.primary,
   },
 
   // TabBar

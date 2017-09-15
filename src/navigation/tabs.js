@@ -25,37 +25,19 @@ import RecipeView from '@containers/recipes/RecipeView';
 const navbarPropsTabs = {
   ...AppConfig.navbarProps,
   renderLeftButton: () => <NavbarMenuButton />,
-  sceneStyle: {
-    ...AppConfig.navbarProps.sceneStyle,
-    paddingBottom: AppSizes.tabbarHeight,
-  },
+  // sceneStyle: {
+  //   ...AppConfig.navbarProps.sceneStyle,
+  //   paddingBottom: AppSizes.tabbarHeight,
+  // },
 };
 
 /* Routes ==================================================================== */
 const scenes = (
-  <Scene key={'tabBar'} tabs tabBarIconContainerStyle={AppStyles.tabbar} pressOpacity={0.95}>
-    <Scene
-      {...navbarPropsTabs}
-      key={'recipes'}
-      title={'Recipes'}
-      icon={props => TabIcon({ ...props, icon: 'search' })}
-    >
-      <Scene
-        {...navbarPropsTabs}
-        key={'recipesListing'}
-        component={Recipes}
-        title={'Recipes'}
-        analyticsDesc={'Recipes: Browse Recipes'}
-      />
-      <Scene
-        {...AppConfig.navbarProps}
-        key={'recipeView'}
-        component={RecipeView}
-        getTitle={props => ((props.title) ? props.title : 'View Recipe')}
-        analyticsDesc={'RecipeView: View Recipe'}
-      />
-    </Scene>
-
+  <Scene key={'tabBar'} tabs 
+    tabBarPosition="top"
+    tabBarIconContainerStyle={AppStyles.tabbar} 
+    pressOpacity={0.95}
+  >
     <Scene
       key={'timeline'}
       {...navbarPropsTabs}
@@ -72,15 +54,6 @@ const scenes = (
       component={Error}
       icon={props => TabIcon({ ...props, icon: 'error' })}
       analyticsDesc={'Error: Example Error'}
-    />
-
-    <Scene
-      key={'styleGuide'}
-      {...navbarPropsTabs}
-      title={'Style Guide'}
-      component={StyleGuide}
-      icon={props => TabIcon({ ...props, icon: 'speaker-notes' })}
-      analyticsDesc={'StyleGuide: Style Guide'}
     />
   </Scene>
 );
