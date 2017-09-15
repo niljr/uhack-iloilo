@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
+
+import * as AgeActions from '@redux/age/actions';
 
 class AgeBracket extends Component {
   render() {
@@ -19,8 +22,13 @@ class AgeBracket extends Component {
   }
 
   onPress = () => {
-    Actions.tabBar({ageBracket: this.props.age});
+    this.props.setAgeBracket(this.props.age)
+    Actions.tabBar();
   }
 }
 
-export default AgeBracket;
+const mapDispatchToProps = {
+  setAgeBracket: AgeActions.setAgeBracket
+}
+
+export default connect(null, mapDispatchToProps)(AgeBracket);
