@@ -22,10 +22,10 @@ import Box from '@containers/box/BoxView';
 const navbarPropsTabs = {
   ...AppConfig.navbarProps,
   renderLeftButton: () => <NavbarMenuButton />,
-  // sceneStyle: {
-  //   ...AppConfig.navbarProps.sceneStyle,
-  //   paddingBottom: AppSizes.tabbarHeight,
-  // },
+  sceneStyle: {
+    ...AppConfig.navbarProps.sceneStyle,
+    paddingBottom: AppSizes.tabbarHeight,
+  },
 };
 
 /* Routes ==================================================================== */
