@@ -245,12 +245,7 @@ class AuthForm extends Component {
     const Form = FormValidation.form.Form;
 
     return (
-      <ScrollView
-        automaticallyAdjustContentInsets={false}
-        ref={(a) => { this.scrollView = a; }}
-        style={[AppStyles.container]}
-        contentContainerStyle={[AppStyles.container]}
-      >
+      <ScrollView>
         <Card>
           <Alerts
             status={this.state.resultMsg.status}
