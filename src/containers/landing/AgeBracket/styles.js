@@ -26,7 +26,7 @@ export default {
   },
   label: {
     fontSize: 30,
-    color: 'white'
+    color: '#36BA8A'
   },
   age: {
     color: 'lightgray',

@@ -8,7 +8,7 @@ class AgeBracket extends Component {
     const { age } = this.props;
     return(
       <TouchableOpacity style={styles.container} onPress={this.onPress}>
-        <Image source={require('../../../images/baby.jpg')} style={styles.image}>
+        <Image source={age.image} style={styles.image} borderRadius={5}>
           <View style={styles.overlay}>
             <Text style={styles.label}>{age.label.toUpperCase()}</Text>
             <Text style={styles.age}>{age.age}</Text>
