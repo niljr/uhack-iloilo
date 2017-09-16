@@ -9,7 +9,7 @@ class AgeBracket extends Component {
     console.log(toyItem)
     return(
       <TouchableOpacity style={styles.innerContainer} onPress={this.onPress}>
-        <Image source={require('../../../images/baby.jpg')} style={styles.image} />
+        <Image source={{uri: toyItem.image}} style={styles.image} />
         <Text style={styles.label} numberOfLines={2}>{toyItem.item.name.toUpperCase()}</Text>
         <Text style={styles.price}>Php {toyItem.item.price}</Text>
       </TouchableOpacity>
@@ -17,7 +17,7 @@ class AgeBracket extends Component {
   }
 
   onPress = () => {
-    Actions.tabBar({ageBracket: this.props.age});
+    Actions.product({productItem: this.props.toyItem});
   }
 }
 

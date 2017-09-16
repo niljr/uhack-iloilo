@@ -6,10 +6,11 @@
  */
 import React from 'react';
 import { Scene } from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // Consts and Libs
 import { AppConfig } from '@constants/';
-import { AppStyles, AppSizes } from '@theme/';
+import { AppColors, AppStyles, AppSizes } from '@theme/';
 
 // Components
 import { TabIcon } from '@ui/';
@@ -42,6 +43,14 @@ const scenes = (
       component={Toys}
       icon={props => TabIcon({ ...props, icon: 'ios-jet' })}
       analyticsDesc={'You choose'}
+      renderRightButton={() => (
+        <Icon 
+          name={'md-basket'} 
+          size={30} 
+          color={AppColors.brand.primary} 
+          style={[...AppStyles.containerCentered,{ top: -2 }]}
+        />
+      )}    
     />
 
     <Scene
@@ -51,6 +60,14 @@ const scenes = (
       component={Box}
       icon={props => TabIcon({ ...props, icon: 'ios-cube' })}
       analyticsDesc={'Package'}
+      renderRightButton={() => (
+        <Icon 
+          name={'md-basket'} 
+          size={30} 
+          color={AppColors.brand.primary} 
+          style={[...AppStyles.containerCentered,{ top: -2 }]}
+        />
+      )}    
     />
   </Scene>
 );
