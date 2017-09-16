@@ -15,9 +15,11 @@ import sideMenu from '@redux/sidemenu/reducer';
 import user from '@redux/user/reducer';
 import recipe from '@redux/recipes/reducer';
 import toys from '@redux/toys/reducer';
+import cart from '@redux/cart/reducer';
 
 // Combine all
 const appReducer = combineReducers({
+  cart,
   age,
   router,
   sideMenu,
