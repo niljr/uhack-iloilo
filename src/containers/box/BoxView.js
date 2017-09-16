@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Text, ScrollView, TouchableOpacity, View } from 'react-native';
+import { Text, ScrollView, TouchableOpacity, View, Image, Button } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { PricingCard } from 'react-native-elements'
 
 class ToysView extends Component{
   componentWillMount() {
@@ -9,9 +10,21 @@ class ToysView extends Component{
   }
   render() {
     return (
-      <ScrollView>
-        <Text>Selection</Text>
-        {/* { this.props.ageBracket.map(age => <AgeBracket age={age} key={age.ageCode} />) } */}
+      <ScrollView style={{ flex: 1}}>
+        <PricingCard
+          color='#36BA8A'
+          title='Starter'
+          price='Php 1,000.00'
+          info={['1 Month Subscription', '5 Educational Toys', 'Customer Support']}
+          button={{ title: 'GET STARTED', icon: 'send' }}
+        />
+        <PricingCard
+          color='#36BA8A'
+          title='Starter'
+          price='Php 1,000.00'
+          info={['1 Month Subscription', '5 Educational Toys', 'Customer Support']}
+          button={{ title: 'GET STARTED', icon: 'send' }}
+        />
       </ScrollView>
     );
   }

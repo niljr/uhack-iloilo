@@ -9,9 +9,9 @@ class AgeBracket extends Component {
     console.log(toyItem)
     return(
       <TouchableOpacity style={styles.innerContainer} onPress={this.onPress}>
-        <Image source={{uri: toyItem.image}} style={styles.image} />
+        <Image source={{uri: 'https://firebasestorage.googleapis.com/v0/b/sample-207f0.appspot.com/o/009167_1.jpg?alt=media&token=98c39e98-48e8-490f-817f-3e432ee554ab'}} style={styles.image} />
         <Text style={styles.label} numberOfLines={2}>{toyItem.item.name.toUpperCase()}</Text>
-        <Text style={styles.price}>Php {toyItem.item.price}</Text>
+        <Text style={styles.price}>Php {toyItem.item.price}.00</Text>
       </TouchableOpacity>
     );
   }
