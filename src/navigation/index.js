@@ -20,6 +20,7 @@ import { NavbarMenuButton } from '@containers/ui/NavbarMenuButton/NavbarMenuButt
 import AppLaunch from '@containers/Launch/LaunchContainer';
 import Placeholder from '@components/general/Placeholder';
 import Landing from '@containers/landing/LandingView';
+import Product from '@containers/product/ProductView';
 import AuthScenes from './auth';
 import TabsScenes from './tabs';
 
@@ -60,6 +61,12 @@ export default Actions.create(
             initial   
           />
           {TabsScenes}
+          <Scene 
+            {...AppConfig.navbarProps}
+            key="product" 
+            component={Product} 
+            title="Product" 
+          />
         </Scene>
       </Scene>
     </Scene>
