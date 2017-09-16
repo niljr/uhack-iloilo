@@ -5,7 +5,8 @@
  * https://github.com/mcnamee/react-native-starter-app
  */
 import React from 'react';
-import { Scene } from 'react-native-router-flux';
+import { Scene, Actions } from 'react-native-router-flux';
+import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 // Consts and Libs
@@ -43,14 +44,16 @@ const scenes = (
       component={Toys}
       icon={props => TabIcon({ ...props, icon: 'ios-jet' })}
       analyticsDesc={'You choose'}
-      renderRightButton={() => (
-        <Icon 
-          name={'md-basket'} 
-          size={30} 
-          color={AppColors.brand.primary} 
-          style={[...AppStyles.containerCentered,{ top: -2 }]}
-        />
-      )}    
+      renderRightButton={(props) => 
+        <TouchableOpacity onPress={Actions.cart}>
+          <Icon 
+            name={'md-basket'} 
+            size={30} 
+            color={AppColors.brand.primary} 
+            style={[...AppStyles.containerCentered,{ top: -2 }]}
+          />
+        </TouchableOpacity>
+      }    
     />
 
     <Scene
@@ -60,14 +63,16 @@ const scenes = (
       component={Box}
       icon={props => TabIcon({ ...props, icon: 'ios-cube' })}
       analyticsDesc={'Package'}
-      renderRightButton={() => (
-        <Icon 
-          name={'md-basket'} 
-          size={30} 
-          color={AppColors.brand.primary} 
-          style={[...AppStyles.containerCentered,{ top: -2 }]}
-        />
-      )}    
+      renderRightButton={() => 
+        <TouchableOpacity onPress={Actions.cart}>
+          <Icon 
+            name={'md-basket'} 
+            size={30} 
+            color={AppColors.brand.primary} 
+            style={[...AppStyles.containerCentered,{ top: -2 }]}
+          />
+        </TouchableOpacity>
+      }    
     />
   </Scene>
 );

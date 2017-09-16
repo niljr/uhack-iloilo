@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import { Actions, Scene, ActionConst } from 'react-native-router-flux';
-
+import { TouchableOpacity } from 'react-native';
 // Consts and Libs
 import { AppConfig } from '@constants/';
 import { AppColors, AppStyles } from '@theme/';
@@ -21,6 +21,7 @@ import AppLaunch from '@containers/Launch/LaunchContainer';
 import Placeholder from '@components/general/Placeholder';
 import Landing from '@containers/landing/LandingView';
 import Product from '@containers/product/ProductView';
+import Cart from '@containers/cart/CartView';
 import AuthScenes from './auth';
 import TabsScenes from './tabs';
 
@@ -46,17 +47,19 @@ export default Actions.create(
           <Scene
             key={'landing'}
             {...AppConfig.navbarProps}
-            title={''}
+            title={'Learn & Play'}
             component={Landing}
             analyticsDesc={'Placeholder: Coming Soon'}
             renderLeftButton={() => <NavbarMenuButton />}
             renderRightButton={() => (
-              <Icon 
-                name={'md-basket'} 
-                size={30} 
-                color={AppColors.brand.primary} 
-                style={[...AppStyles.containerCentered,{ top: -2 }]}
-              />
+              <TouchableOpacity onPress={Actions.cart}>
+                <Icon 
+                  name={'md-basket'} 
+                  size={30} 
+                  color={AppColors.brand.primary} 
+                  style={[...AppStyles.containerCentered,{ top: -2 }]}
+                />
+              </TouchableOpacity>
             )}         
             initial   
           />
@@ -66,6 +69,12 @@ export default Actions.create(
             key="product" 
             component={Product} 
             title="Product" 
+          />
+          <Scene 
+            {...AppConfig.navbarProps}
+            key="cart" 
+            component={Cart} 
+            title="Cart" 
           />
         </Scene>
       </Scene>
