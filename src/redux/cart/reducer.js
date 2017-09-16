@@ -36,11 +36,14 @@ let initialState = {
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
-    // case 'SET_AGE_BRACKET':
-    //   return {
-    //     ...state,
-    //     currentAgeBracket: action.age,
-    //   };
+    case 'ADD_TO_CART':
+      let cart = state.cart;
+      cart.push(action.item)
+      console.log(cart)
+      return {
+        ...state,
+        cart: cart,
+      };
     default:
       return state;
   }
