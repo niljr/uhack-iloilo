@@ -10,6 +10,7 @@ class CartView extends Component{
     if (!cart) return null;
 
     let total = 0;
+    console.log(cart)
     if (cart) {
       return (
         <View>

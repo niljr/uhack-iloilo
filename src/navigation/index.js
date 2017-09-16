@@ -19,6 +19,7 @@ import { NavbarMenuButton } from '@containers/ui/NavbarMenuButton/NavbarMenuButt
 // Scenes
 import AppLaunch from '@containers/Launch/LaunchContainer';
 import Placeholder from '@components/general/Placeholder';
+import CartButton from '@components/ui/CartButton';
 import Landing from '@containers/landing/LandingView';
 import Product from '@containers/product/ProductView';
 import Cart from '@containers/cart/CartView';

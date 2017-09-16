@@ -13,16 +13,16 @@ class ToysView extends Component{
       <ScrollView style={{ flex: 1}}>
         <PricingCard
           color='#36BA8A'
-          title='Starter'
+          title='Basic'
           price='Php 1,000.00'
           info={['1 Month Subscription', '5 Educational Toys', 'Customer Support']}
           button={{ title: 'GET STARTED', icon: 'send' }}
         />
         <PricingCard
           color='#36BA8A'
-          title='Starter'
-          price='Php 1,000.00'
-          info={['1 Month Subscription', '5 Educational Toys', 'Customer Support']}
+          title='Premium'
+          price='Php 2,000.00'
+          info={['1 Month Subscription', '10 Educational Toys', 'Customer Support']}
           button={{ title: 'GET STARTED', icon: 'send' }}
         />
       </ScrollView>

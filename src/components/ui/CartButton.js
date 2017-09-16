@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { Actions } from 'react-native-router-flux';
 import { AppColors, AppStyles } from '@theme/';
 import { TouchableOpacity } from 'react-native';
 
